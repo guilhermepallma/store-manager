@@ -10,7 +10,13 @@ const getByIdService = async (productId) => {
     return result || false;
 };
 
+const createProduct = async (product) => {
+  const result = await productsModel.insertName(product.name);
+  return result;
+};
+
 module.exports = {
   getAllService,
   getByIdService,
+  createProduct,
 };

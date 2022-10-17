@@ -15,7 +15,15 @@ const getByIdController = async (request, response) => {
     response.status(404).json({ message: 'Product not found' });
 };
 
+const createNewProduct = async (request, response) => {
+  const productName = request.body;
+  const result = await productsService.createProduct(productName);
+
+  response.status(201).json(result);
+};
+
 module.exports = {
   getAllController,
   getByIdController,
+  createNewProduct,
 };
