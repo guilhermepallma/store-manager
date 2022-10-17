@@ -14,7 +14,7 @@ describe('Teste unitário da camada Model', function () {
     expect(result).to.deep.equal([products])
   });
 
-    it('Retorna um produto pelo Id', async function () {
+    it('Retorna um produto pelo id', async function () {
     sinon.stub(connection, 'execute').resolves([productId])
     const result = await productsModel.getById();
     expect(result).to.deep.equal([productId])
