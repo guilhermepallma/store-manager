@@ -7,9 +7,7 @@ const getAllService = async () => {
 
 const getByIdService = async (productId) => {
   const [[result]] = await productsModel.getById(productId);
-  if (result) {
     return result || false;
-  }
 };
 
 module.exports = {
