@@ -18,7 +18,14 @@ const productId = {
   name: 'Traje de encolhimento'
 }
 
+const newProductName = {
+  id: 4,
+  name: 'Armadura do Homem de Ferro'
+}
+
+
 module.exports = {
   allProducts,
   productId,
+  newProductName,
 };

@@ -16,8 +16,13 @@ const allProducts = [
   },
 ];
 
+const newProductName = {
+  name: 'Armadura do Homem de Ferro'
+}
+
 module.exports = {
   STATUS_NOT_FOUND,
   STATUS_OK,
   allProducts,
+  newProductName,
 };

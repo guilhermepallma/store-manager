@@ -6,7 +6,7 @@ const { productsService } = require('../../../src/services');
 const { productsModel } = require('../../../src/models')
 
 
-const { allProducts, productId } = require('./mock/products.service.mock');
+const { allProducts, productId, newProductName } = require('./mock/products.service.mock');
 
 describe('Teste unitário da camada Service', function () {
   afterEach(sinon.restore);
@@ -27,5 +27,11 @@ describe('Teste unitário da camada Service', function () {
     sinon.stub(productsModel, 'getById').resolves([[]])
     const result = await productsService.getByIdService(1);
     expect(result).to.deep.equal(false);
+  });
+
+  it('Retorna um produto cadastrado', async function () {
+    sinon.stub(productsModel, 'insertName').resolves([[newProductName]])
+    const result = await productsService.createProduct('Armadura do Homem de Ferro');
+    expect(result).to.deep.equal([[newProductName]]);
   });
 });
