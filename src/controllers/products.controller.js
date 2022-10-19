@@ -1,13 +1,13 @@
 const { productsService } = require('../services');
 
-const getAllController = async (_request, response) => {
-  const result = await productsService.getAllService();
+const getAllProducts = async (_request, response) => {
+  const result = await productsService.getAll();
   return response.status(200).json(result);
 };
 
-const getByIdController = async (request, response) => {
+const getByIdProducts = async (request, response) => {
   const { id } = request.params;
-  const result = await productsService.getByIdService(id);
+  const result = await productsService.getById(id);
 
   if (result) {
     return response.status(200).json(result);
@@ -23,7 +23,7 @@ const createNewProduct = async (request, response) => {
 };
 
 module.exports = {
-  getAllController,
-  getByIdController,
+  getAllProducts,
+  getByIdProducts,
   createNewProduct,
 };

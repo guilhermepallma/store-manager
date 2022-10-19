@@ -10,13 +10,13 @@ describe('Teste unitário da camada Model', function () {
 
   it('Retorna todos os produtos do banco de dados', async function () {
     sinon.stub(connection, 'execute').resolves([products])
-    const result = await productsModel.getAll();
+    const result = await productsModel.selectGetAll();
     expect(result).to.deep.equal([products])
   });
 
   it('Retorna um produto pelo id', async function () {
     sinon.stub(connection, 'execute').resolves([productId])
-    const result = await productsModel.getById();
+    const result = await productsModel.selectGetById();
     expect(result).to.deep.equal([productId])
   });
 
