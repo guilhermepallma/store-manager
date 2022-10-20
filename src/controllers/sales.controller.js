@@ -13,7 +13,15 @@ const getByIdSales = async (request, response) => {
   return response.status(code).json(message);
 };
 
+const deleteSale = async (request, response) => {
+  const { id } = request.params;
+  const { code, message } = await salesService.deleteSaleId(id);
+
+  return response.status(code).json(message);
+};
+
 module.exports = {
   getAllSeles,
   getByIdSales,
+  deleteSale,
 };

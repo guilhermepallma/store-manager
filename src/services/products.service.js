@@ -27,9 +27,9 @@ const updateProductName = async (name, id) => {
   return { code: 200, message: { id, name } };
 };
 
-const deleteProductName = async (id) => {
+const deleteProductId = async (id) => {
   const [[getProductId]] = await productsModel.selectGetById(id);
-  await productsModel.deleteName(id);
+  await productsModel.deleteNameId(id);
 
   if (!getProductId) {
     return {
@@ -44,5 +44,5 @@ module.exports = {
   getById,
   createProduct,
   updateProductName,
-  deleteProductName,
+  deleteProductId,
 };

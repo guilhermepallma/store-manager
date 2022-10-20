@@ -25,7 +25,7 @@ const updateName = async (name, id) => {
   return result;
 };
 
-const deleteName = async (id) => {
+const deleteNameId = async (id) => {
   const [result] = await connection.execute(
     `DELETE FROM StoreManager.products
       WHERE id = ?`, [id],
@@ -38,5 +38,5 @@ module.exports = {
   selectGetById,
   insertName,
   updateName,
-  deleteName,
+  deleteNameId,
 };

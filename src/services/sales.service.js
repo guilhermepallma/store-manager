@@ -15,7 +15,21 @@ const getById = async (id) => {
     return { code: 404, message: { message: 'Sale not found' },
   };
 };
+
+const deleteSaleId = async (id) => {
+  const [getSalesId] = await salesModel.selectGetById(id);
+  await salesModel.deleteSaleId(id);
+
+  if (!getSalesId) {
+    return {
+      code: 404, message: { message: 'Sale not found' },
+    };
+  }
+  return { code: 204 };
+};
+
 module.exports = {
   getAll,
   getById,
+  deleteSaleId,
 };

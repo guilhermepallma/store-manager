@@ -32,7 +32,7 @@ const updateProduct = async (request, response) => {
 
 const deleteProduct = async (request, response) => {
   const { id } = request.params;
-  const { code, message } = await productsService.deleteProductName(id);
+  const { code, message } = await productsService.deleteProductId(id);
 
   response.status(code).json(message);
 };
