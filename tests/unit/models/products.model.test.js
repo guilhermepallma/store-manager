@@ -5,7 +5,7 @@ const { productsModel } = require('../../../src/models');
 const connection = require('../../../src/models/database/connection');
 const { products, productId, newProductName} = require('./mocks/products.model.mock');
 
-describe('Teste unitário da camada Model', function () {
+describe('Teste unitário "Products" da camada Model', function () {
   afterEach(sinon.restore);
 
   it('Retorna todos os produtos do banco de dados', async function () {
@@ -20,9 +20,21 @@ describe('Teste unitário da camada Model', function () {
     expect(result).to.deep.equal([productId])
   });
 
-  it('Adiciona um item na tabela do banco de dados', async function () {
+  it('Adiciona um item na tabela "products" do banco de dados', async function () {
     sinon.stub(connection, 'execute').resolves([{ insertId: 4 }])
     const result = await productsModel.insertName('Armadura do Homem de Ferro');
     expect(result).to.deep.equal(newProductName)
+  });
+
+  it('Atualiza um item na tabela "products" do banco de dados', async function () {
+    sinon.stub(connection, 'execute').resolves([productId])
+    const result = await productsModel.updateName('Capa do Thor');
+    expect(result).to.deep.equal(productId)
+  });
+
+   it('Deleta um item na tabela "products" por id', async function () {
+    sinon.stub(connection, 'execute').resolves([productId])
+    const result = await productsModel.deleteNameId('Capa do Thor');
+    expect(result).to.deep.equal(productId)
   });
 });

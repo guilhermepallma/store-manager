@@ -4,7 +4,7 @@ const chai = require('chai')
 const chaiHttp = require('chai-http');
 
 const connection = require('../../../src/models/database/connection');
-const { STATUS_NOT_FOUND, STATUS_OK, allProducts, newProductName } = require('./mock/products.controller.mock')
+const { STATUS_NOT_FOUND, STATUS_OK, allProducts, newProductName, updateProduct } = require('./mock/products.controller.mock')
 
 chai.use(chaiHttp)
 
