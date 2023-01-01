@@ -20,7 +20,7 @@ Desenvolver um sistemas de gestão onde deve ser possivel fazer um CRUD (Criar, 
 
 <br>
 
-Na elaboração da API RESTful, o projeto foi organizado com a arquitetura MSC (Model-Service-Controller).
+Na elaboração da API RESTful, foi definido a arquitetura MSC (Model-Service-Controller).
 
 ## ⚙️ Execução
 
