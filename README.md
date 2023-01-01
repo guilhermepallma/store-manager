@@ -71,6 +71,26 @@ Navegue até a raíz do projeto.
   Dentro do container <strong>store_manager</strong> instale as dependências.
   
     npm install
+     
+  Para iniciarmos o servidor da aplicação execute o comando abaixo no terminal do container <strong>store_manager</strong>.
+     
+    npm run debug
+     
+  Para se conectar com o banco de dados, abra o terminal do container <strong>store_manager_db</strong>.
+     
+     docker exec -it store_manager_db bash
+  
+  Faça login no banco de dados usando as environment variables descritas no <strong>docker-compose.yaml</strong>.
+     
+     mysql -u root -p
+     
+  Execute os scripts <strong>migration.sql</strong> e <strong>seed.sql</strong> dentro do container <strong>store_manager</strong> para criar o banco de dados e povoar.
+    
+    npm run migration && npm run seed
+     
+  Podemos rodar todos os testes usando o comando abaixo no terminal do container <strong>store_manager</strong>.
+     
+     npm run test:mocha
   
   </details>
     
