@@ -45,7 +45,7 @@ Navegue até a raíz do projeto.
     
   Faça login no banco de dados usando suas credenciais.
   
-    mysql -u <your-username> -p
+    mysql -u <seu-usuário> -p
     
   Execute os scripts <strong>migration.sql</strong> e <strong>seed.sql</strong> para criar o banco de dados e povoar.
     
